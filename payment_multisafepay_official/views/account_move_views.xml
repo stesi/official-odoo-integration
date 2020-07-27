@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="multisafepay_view_move_form" model="ir.ui.view">
+        <field name="name">account.move.form.view.multisafepay</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <header position="inside">
+                <field name="can_be_refund_with_multisafepay" invisible="1"/>
+                <button name="refund_with_multisafepay"
+                        class="btn btn-primary"
+                        string="Refund with MultiSafepay"
+                        type="object"
+                        attrs="{'invisible' : [('can_be_refund_with_multisafepay', '=', False)]}"/>
+            </header>
+            <xpath expr='//field[@name="currency_id"]' position='after'>
+                <field name="multisafepay_refund_id" readonly="1"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

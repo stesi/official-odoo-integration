@@ -1,0 +1,251 @@
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan text-alpha-dark">Official MultiSafepay integration</h2>
+        <p class="oe_mt32 oe_mb32 text-justify">
+            Easily integrate MultiSafepay payment solutions into your Odoo 13 eCommerce webshop with
+            the free and completely new MultiSafepay Odoo 13 eCommerce plugin.
+        </p>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan">Requirements</h2>
+        <ol>
+            <li>
+                To use the plugin you need a MultiSafepay account. You can create a test account on MutliSafepay
+                Control.
+            </li>
+            <li>Odoo 13.0</li>
+            <li>Tested on Python 3.6</li>
+        </ol>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan">Installation</h2>
+        <ol>
+            <li>Download ZIP archive with module</li>
+            <li>
+                Unpack the content of the .ZIP file and add <i>payment_multisafepay_official</i> folder under your
+                custom apps
+                in your Odoo server (<code>/mnt/extra-addons/</code>)
+            </li>
+            <li>
+                Install the required Python dependencies.
+                <p>
+                    <code class="lang-shell">
+                        pip3 install -r requirements.txt
+                    </code>
+                </p>
+                Alternatively, you can install them manually by doing
+                <p>
+                    <code class="lang-shell">
+                        pip3 install multisafepay==0.2.0
+                    </code>
+                </p>
+            </li>
+            <li>Restart Odoo server</li>
+            <li>Activate developer mode at Odoo platform</li>
+            <li>Navigate to Apps menu and click <b>Update Apps List</b></li>
+            <li>Search and open MultiSafepay payments module (payment_multisafepay_official)</li>
+            <li>Click <b>Install</b></li>
+        </ol>
+    </div>
+</section>
+
+<section class="oe_container oe_separator">
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan">Update</h2>
+        <ol>
+            <li>Navigate to Apps menu</li>
+            <li>Search and open MultiSafepay payments module</li>
+            <li>Click <b>Upgrade</b></li>
+        </ol>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan">Configuration</h2>
+        <p>Configuration is possible within the <i>Invoicing</i> menu or the <i>Website</i> menu.</p>
+        <ol>
+            <li>
+                Navigate to Invoicing/Website menu and go to Configuration -> Payment Acquirers
+            </li>
+            <li>
+                Select <i>MultiSafepay</i> payment acquirer. Go to <b>Edit</b> mode. By default acquirer state is
+                disabled.
+            </li>
+            <li>
+                Change state, <i>Enabled</i> or <i>Test</i>, and enter <i>Live</i> and/or <i>Test API Key</i>, set
+                Journal at Configuration tab, and
+                save changes.
+            </li>
+            <div class="oe_row oe_spaced text-center">
+                <div class="oe_span12 oe_row_img oe_centered">
+                    <img src="multisafepay_acquirer.png" class="img img-responsive"/>
+                </div>
+            </div>
+            <li>
+                Click <b>Pull payment methods</b> at Configuration tab to get payment methods from your MultiSafepay
+                account.
+            </li>
+            <li>
+                Configure payment methods you wish to offer. Each payment method will have to be configured
+                separately.
+            </li>
+            <div class="oe_row oe_spaced text-center">
+                <div class="oe_span12 oe_row_img oe_centered">
+                    <img src="payment_method_list.png" class="img img-responsive"/>
+                </div>
+            </div>
+        </ol>
+        <p>
+            You can configure name, state, supported currency, country, and customer group, which are appropriate
+            for this payment method.
+        </p>
+        <div class="oe_row oe_spaced text-center">
+            <div class="oe_span12 oe_row_img oe_centered">
+                <img src="payment_method_details.png" class="img img-responsive"/>
+            </div>
+        </div>
+        <p>
+            For some payment methods editing country and/or order amount is <b>disabled</b>. The reason is this
+            payment method supported only in certain countries or it has amount limits.
+        </p>
+        <div class="oe_row oe_spaced text-center">
+            <div class="oe_span12 oe_row_img oe_centered">
+                <img src="payment_method_details_with_default.png" class="img img-responsive"/>
+            </div>
+        </div>
+        <p>
+            Also, some payment methods process transactions only in <b>EUR</b>. For these payment methods, if the
+            order was created not in euros, the amount will be <b>converted</b> to the required currency. <b>Odoo
+            platform currency rate</b> is used for conversions and it is configured by a system administrator.
+        </p>
+    </div>
+</section>
+
+<section class="oe_container oe_separator">
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan">Using</h2>
+
+        <h3 class="oe_slogan text-left">Create order</h3>
+        <ol>
+            <li>Select the desired payment method at the checkout page and click <b>Pay now</b>.</li>
+            <div class="oe_row oe_spaced text-center">
+                <div class="oe_span12 oe_row_img oe_centered">
+                    <img src="checkout_page.png" class="img img-responsive"/>
+                </div>
+            </div>
+            <li>Enter additional params (for example, bank account), if required, and confirm payment.</li>
+            <div class="oe_row oe_spaced text-center">
+                <div class="oe_span12 oe_row_img oe_centered">
+                    <img src="multisafepay_page.png" class="img img-responsive"/>
+                </div>
+            </div>
+            <li>Message <b>Order { order ID } Confirmed</b> means that the transaction was completed.</li>
+        </ol>
+        <div class="oe_row oe_spaced text-center">
+            <div class="oe_span12 oe_row_img oe_centered">
+                <img src="order_is_confirmed.png" class="img img-responsive"/>
+            </div>
+        </div>
+
+        <h3 class="oe_slogan text-left">Complete order</h3>
+        <ol>
+            <li>Navigate to Website menu. Go to Orders -> Orders and select needed order.</li>
+            <li>Go to <b>Delivery</b> and <b>Validate</b> transfer to mark the order as <i>Shipped</i>.</li>
+            <li>
+                Now, in order details, you can create an invoice. It will be <b>paid</b>, right away after being posted,
+                as the order was prepaid.
+            </li>
+            <div class="oe_row oe_spaced text-center">
+                <div class="oe_span12 oe_row_img oe_centered">
+                    <img src="paid_invoice.png" class="img img-responsive"/>
+                </div>
+            </div>
+            <li>
+                If you want to update invoice ID of the transaction at <i>MultiSafepay</i>, you should go to
+                Configuration -> Payment transactions, select the needed transaction and click <b>Update invoice ID</b>.
+            </li>
+        </ol>
+
+        <h3 class="oe_slogan text-left">Refund order</h3>
+        <p>At Odoo platform you can refund only fully completed order.</p>
+        <ol>
+            <li>Go to Order invoices and click <b>Add Credit Note</b> for creating refund invoice</li>
+            <li>Enter <b>refund reason</b> and check invoice lines, which you want to return. Click <b>Post</b>.</li>
+            <li>Click <b>Refund with MultiSafepay</b> to create a refund request.</li>
+            <div class="oe_row oe_spaced text-center">
+                <div class="oe_span12 oe_row_img oe_centered">
+                    <img src="refund_invoice.png" class="img img-responsive"/>
+                </div>
+            </div>
+            <li>If the request was created successfully, invoice status will change.</li>
+            <li>
+                When refund transaction at MultiSafepay will be marked as <i>Completed</i>, refund invoice status will
+                be changed to <i>Paid</i>.
+            </li>
+        </ol>
+        <h4 class="text-black-75">Refund with shopping cart</h4>
+        <p>
+            If the order was paid with <i>Klarna</i>, <i>AfterPay</i>, <i>E-invoice</i> or <i>Pay After Delivery</i>,
+            refund will be made with refund with shopping cart. In this case <b>item quantity</b> can not be more than
+            quantity in the original order and <b>item price</b> must be equal to price in the original order.
+        </p>
+        <p>
+            <b>Note!</b> Refund cannot be claimed for those payment methods, if any coupon or promo code was applied to
+            the original order.
+        </p>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan">Supported Payment methods</h2>
+        <ul class="oe_span6 list-group">
+            <li class="list-group-item">iDEAL</li>
+            <li class="list-group-item">SOFORT Banking</li>
+            <li class="list-group-item">PayPal</li>
+            <li class="list-group-item">Belfius</li>
+            <li class="list-group-item">ING HomePay</li>
+            <li class="list-group-item">KBC</li>
+            <li class="list-group-item">Alipay</li>
+            <li class="list-group-item">Betaalplan Santander</li>
+            <li class="list-group-item">Direct Bank Transfer</li>
+            <li class="list-group-item">AfterPay</li>
+            <li class="list-group-item">Pay After Delivery</li>
+            <li class="list-group-item">E-Invoicing</li>
+            <li class="list-group-item">Maestro</li>
+            <li class="list-group-item">EPS</li>
+        </ul>
+
+        <ul class="oe_span6 list-group">
+            <li class="list-group-item">Giropay</li>
+            <li class="list-group-item">JCB</li>
+            <li class="list-group-item">BankTransfer</li>
+            <li class="list-group-item">ApplePay</li>
+            <li class="list-group-item">Bancontact</li>
+            <li class="list-group-item">Trustly</li>
+            <li class="list-group-item">PayInAdvance</li>
+            <li class="list-group-item">Klarna</li>
+            <li class="list-group-item">SEPA Direct Debit</li>
+            <li class="list-group-item">MasterCard</li>
+            <li class="list-group-item">Visa</li>
+            <li class="list-group-item">American Express</li>
+            <li class="list-group-item">DotPay</li>
+        </ul>
+    </div>
+</section>
+
+<section class="oe_container oe_separator">
+</section>
