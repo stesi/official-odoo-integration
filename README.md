@@ -92,7 +92,7 @@ At Odoo platform you can refund only fully completed order.
 5.  When refund transaction at MultiSafepay will be marked as _Completed_, refund invoice status will be changed to _Paid_.
 
 #####   Refund with shopping cart
-If the order was paid with _Klarna_, _AfterPay_, _E-invoice_ or _Pay After Delivery_, refund will be made with refund with shopping cart.
+If the order was paid with _Klarna - Buy now, pay later_, _AfterPay_, _E-invoice_ or _Pay After Delivery_, refund will be made with refund with shopping cart.
 In this case __item quantity__ can not be more than quantity in the original order and __item price__ must be equal to price in the original order.
 
 __Note!__ Refund cannot be claimed for those payment methods, if any coupon or promo code was applied to the original order.
@@ -119,7 +119,7 @@ __Note!__ Refund cannot be claimed for those payment methods, if any coupon or p
 -   [Bancontact](https://docs.multisafepay.com/payment-methods/banks/bancontact/)
 -   [Trustly](https://docs.multisafepay.com/payment-methods/banks/trustly/)
 -   PayInAdvance
--   [Klarna](https://docs.multisafepay.com/payment-methods/billing-suite/klarna/)
+-   [Klarna - Buy now, pay later](https://docs.multisafepay.com/payment-methods/billing-suite/klarna/)
 -   [SEPA Direct Debit](https://docs.multisafepay.com/payment-methods/banks/sepa-direct-debit/)
 -   [MasterCard](https://docs.multisafepay.com/payment-methods/credit-and-debit-cards/mastercard/)
 -   [Visa](https://docs.multisafepay.com/payment-methods/credit-and-debit-cards/visa/)
