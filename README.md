@@ -105,7 +105,7 @@ __Note!__ Refund cannot be claimed for those payment methods, if any coupon or p
 -   [ING HomePay](https://docs.multisafepay.com/payment-methods/banks/ing-home-pay/)
 -   [KBC](https://docs.multisafepay.com/payment-methods/banks/kbc/)
 -   [Alipay](https://docs.multisafepay.com/payment-methods/wallet/alipay/)
--   [Betaalplan Santander](https://docs.multisafepay.com/payment-methods/billing-suite/betaalplan/)
+-   [Santander Consumer Finance | Pay per Month](https://docs.multisafepay.com/payment-methods/billing-suite/betaalpermaand/)
 -   [Request to Pay powered by Deutsche Bank](https://docs.multisafepay.com/payment-methods/banks/request-to-pay/)
 -   [AfterPay](https://docs.multisafepay.com/payment-methods/billing-suite/afterpay/)
 -   [Pay After Delivery](https://docs.multisafepay.com/payment-methods/billing-suite/pay-after-delivery/)
