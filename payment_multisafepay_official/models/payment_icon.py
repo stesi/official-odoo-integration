@@ -32,6 +32,7 @@ MULTISAFEPAY_PAYMENT_METHOD = 'MultiSafepay'
 DOTPAY_PAYMENT_METHOD = 'DOTPAY'
 IDEAL_QR_PAYMENT_METHOD = 'IDEALQR'
 MCACQ_MS_PAYMENT_METHOD = 'MCACQMS'
+GENERIC_PAYMENT_METHOD = 'GENERIC'
 IN3_PAYMENT_METHOD = 'IN3'
 FIETSENBON_PAYMENT_METHOD = 'FIETSENBON'
 PSAFECARD_PAYMENT_METHOD = 'PSAFECARD'
@@ -190,6 +191,10 @@ DEFAULT_VALUES = {
         'name': 'Pay after Delivery B2B',
         'direct_supported': False,
     },
+    GENERIC_PAYMENT_METHOD: {
+        'name': 'Generic gateway',
+        'is_generic_gateway': True,
+    },
 }
 
 
@@ -213,6 +218,8 @@ class MultiSafepayPaymentIcon(models.Model):
     editable_min_amount = fields.Boolean(string='Can be min amount be edit', default=True)
     editable_max_amount = fields.Boolean(string='Can be max amount be edit', default=True)
     editable_country = fields.Boolean(string='Can be country be edit', default=True)
+    is_generic_gateway = fields.Boolean(string='Is generic gateway', default=False)
+    requires_shopping_cart = fields.Boolean(string='Does this gateway require a shopping cart', default=False)
 
     @staticmethod
     def create_multisafepay_icon(payment_method_id, env, provider):
@@ -254,6 +261,8 @@ class MultiSafepayPaymentIcon(models.Model):
             'title': payment_method_id.upper(),
             'provider': provider,
             'is_credit_card': payment_icon_deafult_value.get('is_credit_card', False),
+            'is_generic_gateway': payment_icon_deafult_value.get('is_generic_gateway', False),
+            'requires_shopping_cart': payment_icon_deafult_value.get('requires_shopping_cart', False),
             'image': image,
             'country_ids': countries,
             'min_amount': min_amount,
