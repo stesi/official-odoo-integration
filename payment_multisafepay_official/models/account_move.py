@@ -56,10 +56,15 @@ class MultiSafepayAccountMove(models.Model):
             return
 
         gateway = order.get('data', {}).get('payment_details', {}).get('type', '')
+        gateway_object = MultiSafepayPaymentIcon.create_multisafepay_icon(
+                        gateway,
+                        self.env,
+                        self.provider
+                    )
         refund_with_shopping_cart = gateway in ['KLARNA',
                                                 'AFTERPAY',
                                                 'PAYAFTER',
-                                                'EINVOICE', ]
+                                                'EINVOICE', ] or gateway_object.requires_shopping_cart
         refund_body = self.__get_refund_body(refund_with_shopping_cart, order)
         _logger.info(refund_body)
         response = multisafepay_client.order.refund(multisafepay_tx_ids[0].multisafepay_order_id, refund_body)

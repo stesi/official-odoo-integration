@@ -82,6 +82,21 @@ class MultiSafepayPaymentAcquirer(models.Model):
                 self.provider
             )
             payment_icon_ids.append(payment_icon.id)
+
+        existing_generic_icon = self.env['payment.icon'].search(
+                        [('is_generic_gateway', '=', payment_method.get('id', '').upper())],
+                        limit=1)
+
+        if existing_generic_icon:
+            payment_icon_ids.append(existing_generic_icon.id)
+        else:
+            generic_payment_icon = MultiSafepayPaymentIcon.create_multisafepay_icon(
+                                    'GENERIC',
+                                    self.env,
+                                    self.provider
+                                )
+            payment_icon_ids.append(generic_payment_icon.id)
+
         self.write({'payment_icon_ids': payment_icon_ids})
 
         return {

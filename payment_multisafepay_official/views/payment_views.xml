@@ -9,11 +9,13 @@
         <field name="arch" type="xml">
             <xpath expr='//notebook' position='before'>
                 <group>
-                    <field name="title" readonly="1"/>
+                    <field name="title" attrs="{'invisible': [('provider', '!=', 'multisafepay')], 'readonly': [('is_generic_gateway', '=', False)]}"/>
                     <field name="provider" readonly="1"/>
                     <field name="is_credit_card" readonly="1"/>
                     <field name="enabled" attrs="{'invisible': [('provider', '!=', 'multisafepay')]}"/>
                     <field name="editable_min_amount" invisible="1"/>
+                    <field name="is_generic_gateway" invisible="1"/>
+                    <field name="requires_shopping_cart" attrs="{'invisible': ['|',('provider', '!=', 'multisafepay'),('is_generic_gateway', '!=', True)], 'readonly': [('is_generic_gateway', '=', False)]}"/>
                     <field name="min_amount"
                            attrs="{'invisible': [('provider', '!=', 'multisafepay')], 'readonly': [('editable_min_amount', '=', False)]}"/>
                     <field name="editable_max_amount" invisible="1"/>

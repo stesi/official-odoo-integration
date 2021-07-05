@@ -6,6 +6,10 @@
 
 Easily integrate MultiSafepay payment solutions into your Odoo 13 eCommerce webshop with the free and completely new MultiSafepay Odoo 13 eCommerce plugin.
 
+## About MultiSafepay ##
+MultiSafepay is a collecting payment service provider which means we take care of the agreements, technical details and payment collection required for each payment method. You can start selling online today and manage all your transactions from one place.
+
+
 ## What is Odoo 13 eCommerce?
 Odoo is an open source software founded in 2004 by a student. Firstly known as OpenERP, the brand changed its focus from an ERP solution to a suite of business applications. More than 360 apps are available thanks to the multiple developments made by Odoo S.A. and its community. Some of these apps are officially validated by Odoo, whereas others developed by the community are dedicated to specific versions for specific needs.
 
@@ -13,8 +17,8 @@ Odoo is available in three editions: Community, Enterprise, and Online. The Comm
 
 
 ##  Requirements
-1.  To use the plugin you need a MultiSafepay account. 
-You can create a test account on [MutliSafepay Control](https://testmerchant.multisafepay.com/signup)
+1.  in order to use the plugin you need a MultiSafepay account. 
+You can create a test account on [MultiSafepay Control](https://testmerchant.multisafepay.com/signup)
 2.  Odoo 13.0
 3.  Tested on Python 3.6
 
@@ -30,7 +34,7 @@ You can create a test account on [MutliSafepay Control](https://testmerchant.mul
     ```shell
     pip3 install multisafepay==0.2.0
     ```
-    You can find all the information about the dependencies on the [link](https://pypi.org/project/multisafepay/)
+    You can find all the information about the dependencies at this [link](https://pypi.org/project/multisafepay/)
 4.  Restart Odoo server
 5.  Activate developer mode at Odoo platform
 6.  Navigate to Apps menu and click __Update Apps List__
@@ -88,7 +92,7 @@ At Odoo platform you can refund only fully completed order.
 5.  When refund transaction at MultiSafepay will be marked as _Completed_, refund invoice status will be changed to _Paid_.
 
 #####   Refund with shopping cart
-If the order was paid with _Klarna_, _AfterPay_, _E-invoice_ or _Pay After Delivery_, refund will be made with refund with shopping cart.
+If the order was paid with _Klarna - Buy now, pay later_, _AfterPay_, _E-invoice_ or _Pay After Delivery_, refund will be made with refund with shopping cart.
 In this case __item quantity__ can not be more than quantity in the original order and __item price__ must be equal to price in the original order.
 
 __Note!__ Refund cannot be claimed for those payment methods, if any coupon or promo code was applied to the original order.
@@ -101,8 +105,8 @@ __Note!__ Refund cannot be claimed for those payment methods, if any coupon or p
 -   [ING HomePay](https://docs.multisafepay.com/payment-methods/banks/ing-home-pay/)
 -   [KBC](https://docs.multisafepay.com/payment-methods/banks/kbc/)
 -   [Alipay](https://docs.multisafepay.com/payment-methods/wallet/alipay/)
--   [Betaalplan Santander](https://docs.multisafepay.com/payment-methods/billing-suite/betaalplan/)
--   [Direct Bank Transfer](https://docs.multisafepay.com/payment-methods/banks/direct-bank-transfer/)
+-   [Santander Consumer Finance | Pay per Month](https://docs.multisafepay.com/payment-methods/billing-suite/betaalpermaand/)
+-   [Request to Pay powered by Deutsche Bank](https://docs.multisafepay.com/payment-methods/banks/request-to-pay/)
 -   [AfterPay](https://docs.multisafepay.com/payment-methods/billing-suite/afterpay/)
 -   [Pay After Delivery](https://docs.multisafepay.com/payment-methods/billing-suite/pay-after-delivery/)
 -   [E-Invoicing](https://docs.multisafepay.com/payment-methods/billing-suite/e-invoicing/)
@@ -115,7 +119,7 @@ __Note!__ Refund cannot be claimed for those payment methods, if any coupon or p
 -   [Bancontact](https://docs.multisafepay.com/payment-methods/banks/bancontact/)
 -   [Trustly](https://docs.multisafepay.com/payment-methods/banks/trustly/)
 -   PayInAdvance
--   [Klarna](https://docs.multisafepay.com/payment-methods/billing-suite/klarna/)
+-   [Klarna - Buy now, pay later](https://docs.multisafepay.com/payment-methods/billing-suite/klarna/)
 -   [SEPA Direct Debit](https://docs.multisafepay.com/payment-methods/banks/sepa-direct-debit/)
 -   [MasterCard](https://docs.multisafepay.com/payment-methods/credit-and-debit-cards/mastercard/)
 -   [Visa](https://docs.multisafepay.com/payment-methods/credit-and-debit-cards/visa/)
