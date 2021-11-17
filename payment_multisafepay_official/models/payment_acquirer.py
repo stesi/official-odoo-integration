@@ -12,7 +12,7 @@ _logger = logging.getLogger(__name__)
 class MultiSafepayPaymentAcquirer(models.Model):
     _inherit = 'payment.acquirer'
 
-    provider = fields.Selection(selection_add=[('multisafepay', 'MultiSafepay')])
+    provider = fields.Selection(selection_add=[('multisafepay', 'MultiSafepay')], ondelete={'multisafepay': 'cascade'})
     multisafepay_api_key_test = fields.Char('MultiSafepay test api key', size=40)
     multisafepay_api_key_live = fields.Char('MultiSafepay live api key', size=40)
 
