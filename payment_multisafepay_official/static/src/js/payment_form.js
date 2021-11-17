@@ -44,6 +44,8 @@ odoo.define('payment_multisafepay_official.payment_form', function (require) {
             var ideal_select = this.$('select[name="ideal_issuer_id"]')[0];
             var cc_select = this.$('select[name="cc_multisafepay_pm_id"]')[0];
 
+            console.log(cc_select);
+            console.log(ideal_select);
             if (checked_radio[0].getAttribute('data-ideal-issuer') == 'true') {
                 if(typeof cc_select !== "undefined") {
                     cc_select.setAttribute('hidden', '');
