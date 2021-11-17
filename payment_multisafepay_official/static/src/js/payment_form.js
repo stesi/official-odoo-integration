@@ -25,12 +25,14 @@ odoo.define('payment_multisafepay_official.payment_form', function (require) {
         changeIdealIssuer: function () {
             var select = this.$('select[name="ideal_issuer_id"]');
             var input = this.$('input[data-ideal-issuer="true"]')[0];
+            console.log(input);
             input.setAttribute('data-issuer-id', select.val());
         },
 
         changeCreditCardMethod: function () {
             var select = this.$('select[name="cc_multisafepay_pm_id"]');
             var input = this.$('input[data-credit-card="true"]')[0];
+            console.log(input);
             input.setAttribute('data-payment-method-id', select.val());
             input.setAttribute('data-multisafepay-aq', select.val());
             input.setAttribute('value', 'form_' + select.val());
@@ -46,22 +48,22 @@ odoo.define('payment_multisafepay_official.payment_form', function (require) {
 
             console.log(cc_select);
             console.log(ideal_select);
-            if (checked_radio[0].getAttribute('data-ideal-issuer') == 'true') {
-                if(typeof cc_select !== "undefined") {
-                    cc_select.setAttribute('hidden', '');
-                    ideal_select.removeAttribute('hidden');
-                }
-            } else if (checked_radio[0].getAttribute('data-credit-card') == 'true') {
-             if(typeof ideal_select !== "undefined") {
-                ideal_select.setAttribute('hidden', '');
-                cc_select.removeAttribute('hidden');
-                }
-            } else {
-             if(typeof cc_select !== "undefined") {
-                cc_select.setAttribute('hidden', '');
-                ideal_select.setAttribute('hidden', '');
-                }
-            }
+//            if (checked_radio[0].getAttribute('data-ideal-issuer') == 'true') {
+//                if(typeof cc_select !== "undefined") {
+//                    cc_select.setAttribute('hidden', '');
+//                    ideal_select.removeAttribute('hidden');
+//                }
+//            } else if (checked_radio[0].getAttribute('data-credit-card') == 'true') {
+//             if(typeof ideal_select !== "undefined") {
+//                ideal_select.setAttribute('hidden', '');
+//                cc_select.removeAttribute('hidden');
+//                }
+//            } else {
+//             if(typeof cc_select !== "undefined") {
+//                cc_select.setAttribute('hidden', '');
+//                ideal_select.setAttribute('hidden', '');
+//                }
+//            }
 
             $('input[data-provider="multisafepay"]').prop("checked", true);
         },
