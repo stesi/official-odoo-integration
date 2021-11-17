@@ -45,14 +45,20 @@ odoo.define('payment_multisafepay_official.payment_form', function (require) {
             var cc_select = this.$('select[name="cc_multisafepay_pm_id"]')[0];
 
             if (checked_radio[0].getAttribute('data-ideal-issuer') == 'true') {
-                cc_select.setAttribute('hidden', '');
-                ideal_select.removeAttribute('hidden');
+                if(typeof cc_select !== "undefined") {
+                    cc_select.setAttribute('hidden', '');
+                    ideal_select.removeAttribute('hidden');
+                }
             } else if (checked_radio[0].getAttribute('data-credit-card') == 'true') {
+             if(typeof ideal_select !== "undefined") {
                 ideal_select.setAttribute('hidden', '');
                 cc_select.removeAttribute('hidden');
+                }
             } else {
+             if(typeof cc_select !== "undefined") {
                 cc_select.setAttribute('hidden', '');
                 ideal_select.setAttribute('hidden', '');
+                }
             }
 
             $('input[data-provider="multisafepay"]').prop("checked", true);
